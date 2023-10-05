@@ -74,6 +74,7 @@ export async function listContent(providedFetch) {
     if (APPROVED_POSTERS_GH_USERNAME.length === 1 && APPROVED_POSTERS_GH_USERNAME[0] === REPO_OWNER) {
         url += '&' + new URLSearchParams({creator: REPO_OWNER});
     }
+
     do {
         const res = await providedFetch(next?.url ?? url, {
             headers: authheader
